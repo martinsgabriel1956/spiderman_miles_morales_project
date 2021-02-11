@@ -4,9 +4,9 @@ header {
 }
 
 .navbar {
-  max-width: 1440px;
+  max-width: 1240px;
   margin: 0 auto;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,15 +14,18 @@ header {
 
 .nav-menu {
   display: flex;
-  justify-content: flex-start;
+  justify-content: start;
   align-items: center;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
-  
-    
+
+  @include responsive() {
+    display: none;
+  }
+
   li {
     margin-left: 24px;
   }
@@ -30,7 +33,11 @@ header {
 
 #logo {
   max-width: 88px;
-  }
+}
+
+.nav-list li:last-child a {
+  color: $red;
+}
 
 .nav-link {
   display: inline-block;
@@ -42,48 +49,73 @@ header {
   text-transform: uppercase;
   color: $gray-3;
   padding: 8px 16px;
-  transition: .7s ease;
+  transition: 0.7s ease;
   position: relative;
-  
-  &::after{
+
+  &::after {
     content: "";
     display: block;
     position: absolute;
     top: -50px;
     left: 50%;
-    width: 2px;
-    height: 0px;
-    transition: .7s ease;
 
-    background: linear-gradient(180deg, rgba(226, 29, 34, 0) 0%, #E21D22 100%);
+    width: 2px;
+    height: 0;
+    transition: 0.7s ease;
+
+    transform: translate3d(-15%, 0, 0);
+
+    background: linear-gradient(180deg, rgba(226, 29, 34, 0) 0%, #e21d22 100%);
   }
 
   &:hover {
     color: $white-light;
 
-    &::after{
+    &::after {
       height: 40px;
     }
   }
 }
 
+.bx {
+  
+  display: none;
+  
+  @include responsive() {
+    display: block;
+    width: 48px;
+    height: 48px;
+  
+    background-color: $white;
+    border-radius: 8px;
+  }
+}
+
 .nav-social {
   display: flex;
-  
+  justify-content: center;
+  align-items: center;
+
   svg {
     cursor: pointer;
 
     margin-left: 16px;
-    width: 24px;;
-    
-    path {
-      transition: .7s ease;
+    width: 24px;
+
+    path,
+    circle {
+      transition: 0.7s ease;
     }
     &:hover {
-      path, circle {
+      path,
+      circle {
         fill: $red-light;
-        transform: translate3d(0,-3px,0)
+        transform: translate3d(0, -2px, 0);
       }
     }
+  }
+
+  @include responsive() {
+    display: none;
   }
 }
