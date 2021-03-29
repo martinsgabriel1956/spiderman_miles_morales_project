@@ -1,3 +1,7 @@
-<p align="center">
+<span align="center">
   <img src="./.github/logo.png" alt="Logo" />
-</p>
+  <img src="./.github/spiderman.png" alt="spiderman" />
+  
+</span>
+
+
