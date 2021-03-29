@@ -1,6 +1,10 @@
-<span align="center">
+<p align="center">
   <img src="./.github/logo.png" alt="Logo" />
-</span>
+</p>
+
+<p align="center">
+  <img src="./.github/main-mockup.png" alt="Main" />
+</p>
 
 ## 🚀 Tecnologias
 
